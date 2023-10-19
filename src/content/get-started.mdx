@@ -725,7 +725,7 @@ import { useForm, Controller } from "react-hook-form"
 export default function App() {
   const {
     control,
-    handleSubmit,
+    getValues,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -770,7 +770,7 @@ export default function App() {
         name="lastName"
       />
 
-      <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+      <Button title="Submit" onPress={onSubmit(getValues())} />
     </View>
   )
 }
